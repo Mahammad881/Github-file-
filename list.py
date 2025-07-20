@@ -1,2 +1,1 @@
-print("prajwal is good boy")
-print("naveen is good boy")
+print("something changed")
