@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    input, select, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+    }
+
+    .result {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #333;
+    }
+    .convert{
+        font-size: 20px;
+        background-color: rgb(211, 178, 135);
+        border-radius: 100vh;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Length Unit Converter</h1>
+
+  <input type="number" id="inputValue" placeholder="Enter value">
+
+  <br>
+
+  <select id="fromUnit">
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <option value="mile">Mile</option>
+    <option value="foot">Foot</option>
+    <option value="inch">Inch</option>
+  </select>
+
+  <select id="toUnit">
+    <option value="meter">Meter</option>
+    <option value="kilometer">Kilometer</option>
+    <option value="mile">Mile</option>
+    <option value="foot">Foot</option>
+    <option value="inch">Inch</option>
+  </select>
+
+  <br>
+
+  <button class="convert" onclick="convert()">Convert</button>
+
+  <div class="result" id="outputValue"></div>
+
+  <script>
+    const conversionRates = {
+      meter: 1,
+      kilometer: 0.001,
+      mile: 0.000621371,
+      foot: 3.28084,
+      inch: 39.3701
+    };
+
+    function convert() {
+      const input = parseFloat(document.getElementById("inputValue").value);
+      const fromUnit = document.getElementById("fromUnit").value;
+      const toUnit = document.getElementById("toUnit").value;
+
+      if (isNaN(input)) {
+        document.getElementById("outputValue").innerText = "Please enter a valid number.";
+        return;
+      }
+
+      // Convert input to meters first, then to target unit
+      const valueInMeters = input / conversionRates[fromUnit];
+      const convertedValue = valueInMeters * conversionRates[toUnit];
+
+      document.getElementById("outputValue").innerText = 
+        `${input} ${fromUnit} = ${convertedValue.toFixed(4)} ${toUnit}`;
+    }
+  </script>
+
+</body>
+</html>
