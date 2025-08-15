@@ -3,29 +3,50 @@
         <title>Calculator</title> 
         <link rel="stylesheet" href="list.css"> 
 
-        <style>
-        .container{
-            height: 100vh;
-            width: 100%;
-            background-color: aqua;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .caclulator{
-            background-color: azure;
-            padding: 20px;
-            border-radius: 18px;
-        }
-        .caclulator form input {
-            border: 0;
-            outline:0;
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            box-shadow: -8px -8px 15px rgba(255, 255, 255,0.1);
-        }
-    </style>
+<style>
+.container{ 
+    height: 100vh; 
+    width: 100%; 
+    background: #3fa; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+.calculator{ 
+    background: #6ca1a7; 
+    padding: 20px; 
+    border-radius: 10px; 
+} 
+.calculator form input{ 
+    border: 0; 
+    outline: 0; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 10px; 
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.1),5px 5px 15px rgba(0,0,0.2); 
+    background: transparent; 
+    font-size: 35px; 
+    color: #f3043f; 
+    cursor: pointer; 
+    margin: 10px; 
+    font-family: Arial, Helvetica, sans-serif;
+} 
+form.display{ 
+    display: flex; 
+    justify-content: flex-end; 
+    margin: 20px 0; 
+    size: 50px; 
+} 
+form.display input{ 
+    text-align: right; 
+    flex: 1; 
+    font-size: 45px; 
+    box-shadow: none; 
+} 
+#test{ 
+    width: 310px; 
+} 
+        </style>
     </head> 
     <body> 
         <div class="container"> 
@@ -36,7 +57,7 @@
             </div> 
             <div> 
                 <input type="button" value="ac" onclick="display.value=' '" > 
-                <input type="button" value="del" onclick="display.value+='display.value.toString()'.slice(0,-1)"> 
+                <input type="button" value="del" onclick="display.value=display.value.toString().slice(0,-2"> 
                 <input type="button" value="." onclick="display.value+='.'" >  
                 <input type="button" value="/" onclick="display.value+='/'" > 
             </div> 
@@ -59,7 +80,7 @@
                 <input type="button" value="*" onclick="display.value+='*'"> 
             </div> 
             <div> 
-            <input type="button" value="0" onclick="display.value+='0'"> 
+                <input type="button" value="0" onclick="display.value+='0'"> 
                 <input type="button" value="=" class="=" onclick="display.value=eval(display.value)"> 
                 <input type="button" value="(" onclick="display.value+='('"> 
                 <input type="button" value=")" onclick="display.value+=')'"> 
@@ -67,4 +88,3 @@
         </form> 
     </body> 
 </html> 
-

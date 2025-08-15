@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    h2 {
+      text-align: center;
+    }
+    .product, .cart-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 300px;
+      background: #fff;
+    }
+    .product img, .cart-item img {
+      width: 40px;
+      height: 40px;
+    }
+    .product-list, .cart {
+      margin: 20px auto;
+      width: 320px;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+    button {
+      padding: 5px 10px;
+    }
+    hr {
+      width: 320px;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛍️ Product List (Prices in ₹)</h2>
+  <div class="product-list">
+    <div class="product">
+      <img src="https://via.placeholder.com/40" alt="Apple">
+      <div>
+        <strong>Apple</strong><br><span class="price">₹20</span>
+      </div>
+      <button onclick="addToCart('Apple', 20)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/40" alt="Banana">
+      <div>
+        <strong>Banana</strong><br><span class="price">₹10</span>
+      </div>
+      <button onclick="addToCart('Banana', 10)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/40" alt="Orange">
+      <div>
+        <strong>Orange</strong><br><span class="price">₹15</span>
+      </div>
+      <button onclick="addToCart('Orange', 15)">Add to Cart</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>🛒 Your Cart</h2>
+  <div class="cart" id="cart"></div>
+
+  <script>
+    let cart = {};
+
+    function addToCart(product, price) {
+      if (cart[product]) {
+        cart[product].qty += 1;
+      } else {
+        cart[product] = { price: price, qty: 1 };
+      }
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartDiv = document.getElementById("cart");
+      cartDiv.innerHTML = ""; // clear cart display
+
+      for (let item in cart) {
+        const itemData = cart[item];
+        const total = itemData.qty * itemData.price;
+        cartDiv.innerHTML += `
+          <div class="cart-item">
+            <img src="https://via.placeholder.com/40" alt="${item}">
+            <div>
+              ${item} x ${itemData.qty} = ₹${total.toFixed(2)}
+            </div>
+          </div>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
