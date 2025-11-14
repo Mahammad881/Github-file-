@@ -88,10 +88,8 @@
       const valueInMeters = input / conversionRates[fromUnit];
       const convertedValue = valueInMeters * conversionRates[toUnit];
 
-      document.getElementById("outputValue").innerText = 
-        `${input} ${fromUnit} = ${convertedValue.toFixed(4)} ${toUnit}`;
+      document.getElementById("outputValue").innerText =`${input} ${fromUnit} = ${convertedValue.toFixed(4)} ${toUnit}`;
     }
   </script>
-
 </body>
 </html>

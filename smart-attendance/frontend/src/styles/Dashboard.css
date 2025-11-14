@@ -1,0 +1,68 @@
+/* frontend/src/styles/Dashboard.css */
+
+.dashboard-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-container h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.dashboard-link, .dashboard-button {
+    flex: 1 1 250px; /* Allow items to grow/shrink, max 250px wide */
+    padding: 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard-link:hover, .dashboard-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific styles for the links */
+.dashboard-link-view {
+    background-color: #007bff; /* Blue for view records */
+}
+
+.dashboard-link-enroll {
+    background-color: #28a745; /* Green for enrollment */
+}
+
+.dashboard-button-logout {
+    background-color: #dc3545; /* Red for logout */
+    align-self: flex-start; /* Keeps the logout button at the top/start */
+    max-width: 150px; /* Smaller width for logout button */
+    padding: 15px 20px;
+}
+
+.dashboard-note {
+    margin-top: 50px;
+    font-style: italic;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    color: #6c757d;
+}
