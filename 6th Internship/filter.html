@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="p"></ul>
+    <script>
+        let prices=[100,200,265,300,400,500,526];
+        let aff = prices.filter(prices=> prices <= 400)
+        let output=aff.map(p => "<li>" + p + "</li>");
+        document.querySelector("#p").innerHTML=output.join("")
+    </script>
+</body>
+</html>

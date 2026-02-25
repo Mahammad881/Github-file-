@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Records</h1>
+    <table border="1" id="st">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+    </table>
+    <script>
+        let Student=[
+            {Name:"Naveen",Age:20, grade:"A"},
+            {Name:"Vinayak",Age:19, grade:"B"},
+            {Name:"samarth",Age:18, grade:"D"}
+        ];
+        let tbody=document.querySelector("#tb");
+        for(let s of Student){
+            let row = document.createElement("tr");
+            let namec = document.createElement("td");
+            let agec = document.createElement("td");
+            let gradec = document.createElement("td");
+            namec.innerText=s.Name;
+            agec.innerText=s.Age;
+            gradec.innerText=s.grade;
+            row.appendChild(namec);
+            row.appendChild(agec);
+            row.appendChild(gradec);
+            tbody.appendChild(row);
+            console.log(s);
+        }
+    </script>
+</body>
+</html>

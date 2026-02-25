@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useSearchParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useSearchParams} from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import AddStudent from './components/AddStudent';
@@ -7,10 +7,10 @@ import FaceRecognitionTest from './components/FaceRecognitionTest';
 import AttendanceTable from './components/AttendanceTable';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
-function FaceRecognitionWrapper() {
+function FaceRecognitionWrapper(){
   const [searchParams] = useSearchParams();
   const mode = searchParams.get('mode');
-  return mode === 'debug' ? <FaceRecognitionTest /> : <FaceRecognition />;
+  return mode === 'debug'?<FaceRecognitionTest/>:<FaceRecognition/>;
 }
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
           path="/" 
           element={
             <ProtectedRoute>
-              <FaceRecognitionWrapper />
+              <FaceRecognitionWrapper/>
             </ProtectedRoute>
           } 
         />
@@ -41,7 +41,7 @@ function App() {
           path="/add_student" 
           element={
             <ProtectedRoute>
-              <AddStudent />
+              <AddStudent/>
             </ProtectedRoute>
           } 
         />
@@ -49,7 +49,7 @@ function App() {
           path="/dashboard" 
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Dashboard/>
             </ProtectedRoute>
           } 
         />
@@ -57,7 +57,7 @@ function App() {
           path="/attendance-table" 
           element={
             <ProtectedRoute>
-              <AttendanceTable />
+              <AttendanceTable/>
             </ProtectedRoute>
           } 
         />

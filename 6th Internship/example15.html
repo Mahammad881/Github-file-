@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="q"> </h2>
+    <button id="n"> next</button>
+    <script>
+        let qoutes=[
+            "keep quite",
+            "keep leaning",
+            "do paractice",
+            "stay positive",
+            "never stop taking"
+        ];
+        let ci=0;
+        document.querySelector("#n").addEventListener("click",()=>{
+            document.querySelector("#q").innerText=qoutes[ci];
+            ci=ci+1;
+            if(ci >= qoutes.length){
+                ci=0;
+            }
+        });
+    </script>
+    
+</body>
+</html>

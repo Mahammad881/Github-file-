@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="message">hello</h2>
+    <button id="btn">change text</button>
+    <script>
+        let heading=document.querySelector("#message")
+        let button=document.querySelector("#btn")
+        button.addEventListener("click",function(){
+            heading.textContent="text changed successfuullll"
+        });
+    </script>
+</body>
+</html>

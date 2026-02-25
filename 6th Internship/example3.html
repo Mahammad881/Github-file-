@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Count:<span id="count">0</span></h2>
+        <button onclick="increase()"> Increase</button>
+    </h2>
+    <script>
+        let count=1;
+        function addOne(value){
+            return value+1;
+        }
+        function increase(){
+            count=addOne(count);
+            decument.querySelector("#count").innerText=count;
+        }
+    </script>
+</body>
+</html>

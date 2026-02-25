@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="s" placeholder="Search items">
+    <ul id="r"> </ul>
+    <script>
+        let product =["laptop","Phone","tablet","keyboard","Monitor"];
+        document.querySelector("#s").addEventListener("input",(e)=>{
+            let Search=e.target.value.toLowerCase();
+            let filtered=product
+            .filter(product => product.toLowerCase().includes(Search))
+            .map(product=> "<li>"+product+"</li>");
+            document.querySelector("#r").innerHTML=filtered.join("");
+
+        });
+
+    </script>
+    
+
+</body>
+</html>
