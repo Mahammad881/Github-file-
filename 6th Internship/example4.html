@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">c
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Profile"></div>
+    <script>
+        const student={
+            name:"Hanif",
+            age:"20",
+            city:"Koppal",
+            college:"KH Kabbur"
+
+        };
+        const container=document.querySelector("#Profile");
+        container.innerHTML=`
+        <h1>${JSON.stringify(student)}</h1>
+       
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <button id="get-user">Get User Info</button>
+    <p id="user-display">Click to load...</p>
+
+    <script>
+      async function fetchUser() {
+        try {
+          document.querySelector("#user-display").innerText = "Loading...";
+
+          let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+          let user = await response.json();
+
+          document.querySelector("#user-display").innerText =
+            `Name: ${user.name} 
+             Email: ${user.email}`;
+        } catch (error) {
+          document.querySelector("#user-display").innerText = "Failed to load user.";
+        }
+      }
+
+      document.querySelector("#get-user").addEventListener("click", fetchUser);
+    </script>
+
+  </body>
+</html>
